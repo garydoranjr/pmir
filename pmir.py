@@ -48,6 +48,9 @@ class PruningMIR(object):
         @param y : bag labels, array-like, shape [n_bags]
         @return : self
         """
+        bags = map(np.asarray, bags)
+        y = np.asarray(y)
+
         if self.verbose: print 'Creating sampled dataset...'
         N, bags = _sampled_dataset(bags, self.sample_size)
 
